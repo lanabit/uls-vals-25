@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -331,9 +334,7 @@ kalau dengar canda guyonmu`,
             className="object-contain"
           ></Image>
         </motion.div>
-        <motion.div className="text-6xl">
-          Happy <strike>Valentine's</strike> Day
-        </motion.div>
+        <motion.div className="text-6xl">Happy Valentine's Day</motion.div>
         <div className="text-pink-300 ">Have a great rest of your week!</div>
       </motion.div>
     </div>

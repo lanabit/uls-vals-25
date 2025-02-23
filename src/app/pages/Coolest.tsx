@@ -14,8 +14,6 @@ export default function Coolest({
     <motion.div
       animate={{ x: -x, y: -y }}
       className={twMerge("absolute w-[50vw] top-[50vh] left-[50vw]", className)}
-    >
-      <img src="/images/flowers.jpg" className="w-[50%] h-[50%] object-cover" />
-    </motion.div>
+    ></motion.div>
   );
 }
