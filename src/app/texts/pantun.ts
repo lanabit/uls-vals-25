@@ -1,6 +1,6 @@
 export const pantunCollection = {
   radit: {
-    rotation: -2,
+    rotation: -4,
     color: `g-linear-65 from-yellow-500 to-orange-500`,
     pantun: `bak buah simalakama\n
       kalau melihat pacar tersemu\n
@@ -8,7 +8,7 @@ export const pantunCollection = {
       kalau dengar canda guyonmu`,
   },
   joy: {
-    rotation: 5,
+    rotation: 16,
     color: `g-linear-65 from-red-500 to-rose-500`,
     pantun: `hujan deras bulan november\n
       pergi dan datang dengan dadakan\n
@@ -24,7 +24,7 @@ export const pantunCollection = {
       kehadiranmu selalu istimewa`,
   },
   dwi: {
-    rotation: -4,
+    rotation: -16,
     color: `g-linear-65 from-blue-500 to-indigo-500`,
     pantun: `biar adil harus hompimpa\n
       biar langgeng harus serasi\n
@@ -40,7 +40,7 @@ export const pantunCollection = {
   terimakasih sudah jadi adikku`,
   },
   jihan: {
-    rotation: 1,
+    rotation: 16,
     color: `g-linear-65 from-indigo-500 to-blue-500`,
     pantun: `pergi ke alfa beli wafer\n
     tak lupa juga beli indomie\n
@@ -56,7 +56,7 @@ export const pantunCollection = {
   semoga dapet istri korea`,
   },
   karina: {
-    rotation: -5,
+    rotation: -18,
     color: `g-linear-65 from-orange-500 to-yellow-500`,
     pantun: `jalan ke hutan lihat komodo\n
       kabur memanjat pohon meranti\n
@@ -64,7 +64,7 @@ export const pantunCollection = {
       ketemu kamu selalu kunanti`,
   },
   andrean: {
-    rotation: 7,
+    rotation: 8,
     color: `g-linear-65 from-green-500 to-emerald-500`,
     pantun: `you got that strap and leather collar\n
       move it fast then gulp it slowly\n
@@ -72,7 +72,7 @@ export const pantunCollection = {
       keep it witty, kinky, cunty girlie`,
   },
   agnes: {
-    rotation: 4,
+    rotation: 16,
     color: `g-linear-65 from-violet-500 to-purple-500`,
     pantun: `pagi-pagi minum jeruk peresan\n
       malamnya minum promag digerus\n
@@ -88,7 +88,7 @@ export const pantunCollection = {
   saya doakan pay raise-mu itu`,
   },
   amel: {
-    rotation: 2,
+    rotation: -16,
     color: `g-linear-65 from-rose-500 to-red-500`,
     pantun: `pulang malam karena tugas\n
   sambil bawa semen gresik\n
@@ -96,7 +96,7 @@ export const pantunCollection = {
   kamu selalu bikin suasana asik`,
   },
   vida: {
-    rotation: 6,
+    rotation: 8,
     color: `g-linear-65 from-yellow-500 to-amber-500`,
     pantun: `sungai terhubung ke rawa-rawa\n
   di tepi tumbuh bunga seroja\n
@@ -104,7 +104,7 @@ export const pantunCollection = {
   hadirmu bikin senang kerja`,
   },
   rama: {
-    rotation: -6,
+    rotation: -12,
     color: `g-linear-65 from-indigo-500 to-violet-500`,
     pantun: `ke pasar lihat kura-kura\n
   bisa dibeli dengan percuma\n
@@ -112,7 +112,7 @@ export const pantunCollection = {
   semua beres di tangan rama`,
   },
   irfan: {
-    rotation: 7,
+    rotation: 8,
     color: `g-linear-65 from-red-500 to-orange-500`,
     pantun: `panas panas beli es kopyor\n
   minumnya diatas perahu\n
@@ -120,7 +120,7 @@ export const pantunCollection = {
   padahal bro adalah suhu`,
   },
   ivan: {
-    rotation: -4,
+    rotation: -12,
     color: `g-linear-65 from-teal-500 to-cyan-500`,
     pantun: `pergi mendaki ke bromo\n
   pulangnya belanja di cipadu\n
@@ -128,7 +128,7 @@ export const pantunCollection = {
   tapi skill ngoding boleh diadu`,
   },
   waldi: {
-    rotation: 6,
+    rotation: 12,
     color: `g-linear-65 from-gray-500 to-zinc-500`,
     pantun: `semua masalah ada solusi\n
   jika disana ada mas waldi\n

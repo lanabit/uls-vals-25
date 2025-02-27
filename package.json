@@ -9,6 +9,9 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@types/canvas-confetti": "^1.9.0",
+    "canvas-confetti": "^1.9.3",
+    "confetti": "^2.0.6",
     "gsap": "^3.12.7",
     "motion": "^12.4.3",
     "next": "15.1.6",

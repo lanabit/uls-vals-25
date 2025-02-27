@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+import confetti from "canvas-confetti";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import Section from "./components/Section";
@@ -114,6 +115,9 @@ export default function Home() {
         <div className="absolute text-lg whitespace-pre-line top-0 left-[50%] m-8">
           {`dua tiga hello kitty \n ayo wasup shawty`}
         </div>
+        <div className="absolute text-lg whitespace-pre-line bottom-0 right-0 m-8">
+          {`karawang indramayu \n i got sumn for yu`}
+        </div>
       </motion.div>
       <Section ref={openerRef} className="h-screen text-8xl relative">
         <motion.div
@@ -141,7 +145,6 @@ export default function Home() {
             className="w-[50%] h-[100%] object-cover"
           />
         </motion.div>
-        {/* <img src="/images/candy.jpg" className="w-[50%] h-[50%] object-cover" /> */}
         <motion.div
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -178,7 +181,7 @@ export default function Home() {
             // transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
             initial={{ opacity: 0, y: 200, rotate: 20 }}
             whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-            viewport={{ once: false, amount: 0.8, margin: "0px" }}
+            viewport={{ once: false, amount: 0.5, margin: "0px" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute w-[45vw] h-[50vh] top-32 z-[80] left-[60%] moving"
           >
@@ -315,9 +318,34 @@ export default function Home() {
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false, amount: 0.6, margin: "100px" }}
         transition={{ ease: "easeInOut" }}
+        onViewportEnter={() =>
+          confetti({
+            particleCount: 200,
+            spread: 150,
+            origin: { y: 0.6 },
+          })
+        }
         className="flex flex-col h-[100vh] mt-32 gap-8 w-[100vw] justify-center items-center"
       >
-        <motion.div
+        <div className="relative w-[100vw] h-[55vh]">
+          <motion.div
+            initial={{ size: 0, rotate: 360, opacity: 0 }}
+            whileInView={{ size: 350, rotate: 0, opacity: 1 }}
+            transition={{
+              duration: 1,
+              ease: "easeInOut",
+            }}
+            viewport={{ once: false, amount: 0.6, margin: "100px" }}
+            className="absolute w-[25vw] h-[45vh] top-[15%] z-[80] left-[38%] moving"
+          >
+            <img
+              src="/images/saranghae.jpg"
+              className="w-[100%] h-[100%] object-cover"
+            />
+          </motion.div>
+        </div>
+
+        {/* <motion.div
           initial={{ size: 0, rotate: 360, opacity: 0 }}
           whileInView={{ size: 350, rotate: 0, opacity: 1 }}
           transition={{
@@ -333,7 +361,8 @@ export default function Home() {
             height={350}
             className="object-contain"
           ></Image>
-        </motion.div>
+        </motion.div> */}
+
         <div className="text-pink-300">(Xtra Late)</div>
         <motion.div className="text-6xl">Happy Valentine's Day</motion.div>
         <div className="text-pink-300">Have a great rest of your life!</div>
