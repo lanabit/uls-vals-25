@@ -42,6 +42,9 @@ const Draggable = ({
   return (
     <motion.div
       onMouseDown={updateZIndex}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2, ease: "easeInOut" }}
       style={{
         top,
         left,

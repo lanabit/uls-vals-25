@@ -8,10 +8,16 @@ import Section from "./components/Section";
 import { AlternatingTexts } from "./components/AlternatingTexts";
 import Draggable from "./components/Draggable";
 import { motion, useInView } from "motion/react";
-
+import { pantunCollection } from "./texts/pantun";
+import { twMerge } from "tailwind-merge";
 export default function Home() {
   const [message, setMessage] = useState("");
-  const [activePantun, setActivePantun] = useState("");
+  const [activePantun, setActivePantun] = useState<{
+    color: string;
+    pantun: string;
+    rotation?: number;
+  } | null>(null);
+  const [activeName, setActiveName] = useState("");
   useEffect(() => {
     const interBubble = document.querySelector<HTMLDivElement>(".interactive");
     const moving = document.querySelectorAll<HTMLDivElement>(".moving");
@@ -78,27 +84,14 @@ export default function Home() {
     "you make me laugh until my stomach hurts",
     "you make me lose sleep in the nicest way possible",
   ];
-  const pantun = {
-    eibiel: `buka puasa pake kurma\n
-air muka langsung ceria\n
-kocak, bijak, berkarisma\n
-semoga dapet istri korea`,
-    jihan: `pergi ke alfa beli wafer\n
-tak lupa juga beli indomie\n
-my big dick energy lover\n
-ur the best thing that happened to me`,
-    vebby: `masak sop ikan pakai sasa\n
-hidangkan dengan ayam betutu\n
-lead paling perhatian sepanjang masa\n
-saya doakan pay raise-mu itu`,
-    radit: `bak buah simalakama\n
-kalau melihat pacar tersemu\n
-sedih enggan tinggal lama\n
-kalau dengar canda guyonmu`,
-  };
+
   const handleSubmit = () => {
-    if (message in pantun) {
-      setActivePantun(pantun[message as keyof typeof pantun]);
+    setActiveName(message);
+    setActivePantun(null);
+    if (message in pantunCollection) {
+      setActivePantun(
+        pantunCollection[message as keyof typeof pantunCollection]
+      );
     }
   };
 
@@ -137,9 +130,6 @@ kalau dengar canda guyonmu`,
       </Section>
       <Section>
         <motion.div
-          // initial={{ opacity: 0 }}
-          // animate={{ opacity: 1 }}
-          // transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
           initial={{ opacity: 0, y: 100, x: -100, rotate: -10 }}
           whileInView={{ opacity: 1, y: 0, x: 0, rotate: 0 }}
           viewport={{ once: false, amount: 0.5, margin: "-100px" }}
@@ -188,7 +178,7 @@ kalau dengar canda guyonmu`,
             // transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
             initial={{ opacity: 0, y: 200, rotate: 20 }}
             whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-            viewport={{ once: false, amount: 0.5, margin: "0px" }}
+            viewport={{ once: false, amount: 0.8, margin: "0px" }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute w-[45vw] h-[50vh] top-32 z-[80] left-[60%] moving"
           >
@@ -199,8 +189,15 @@ kalau dengar canda guyonmu`,
           </motion.div>
         </div>
       </Section>
-      <Section className="mt-32">
-        <div>you have brighten my day in more ways than one</div>
+      <Section className="mt-[25vh]">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: false, amount: 0.5, margin: "0px" }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        >
+          you have brighten my day in more ways than one
+        </motion.div>
       </Section>
       <div className="gradient-bg">
         <div className="justify-center items-center flex flex-col w-screen h-[100vh] absolute top-0 left-0 z-[100]">
@@ -221,7 +218,7 @@ kalau dengar canda guyonmu`,
             transition={{ delay: 0.3, ease: "easeInOut" }}
             className="text-2xl"
           >
-            (and that's on god)
+            (and that's on god ☝️☝️☝️)
           </motion.div>
         </div>
         <svg xmlns="http://www.w3.org/2000/svg">
@@ -251,6 +248,25 @@ kalau dengar canda guyonmu`,
           <div className="interactive"></div>
         </div>
       </div>
+      {activePantun && (
+        <Draggable
+          containerRef={containerRef}
+          top={"3000px"}
+          left={"45%"}
+          rotate={activePantun.rotation || 2}
+          className={twMerge(
+            "bg-gradient-to-b w-auto shadow-[0_0_20px_rgba(236,72,153,0.5)] p-8 rounded-xl",
+            activePantun.color
+          )}
+        >
+          <div className="flex flex-col gap-4">
+            <div className="whitespace-pre-line">{`from: wulan \nto: ${activeName}`}</div>
+            <div className="text-center whitespace-pre-line">
+              {activePantun.pantun}
+            </div>
+          </div>
+        </Draggable>
+      )}
       <motion.div
         initial={{ y: 100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -259,22 +275,6 @@ kalau dengar canda guyonmu`,
         className="flex justify-center gap-4 h-[50vh] items-center"
       >
         <div className="flex gap-16 items-center">
-          {activePantun && (
-            <Draggable
-              containerRef={containerRef}
-              top={"3000px"}
-              left={"45%"}
-              rotate={2}
-              className="bg-red-500 w-auto p-8 rounded-xl"
-            >
-              <div className="flex flex-col gap-4">
-                <div className="whitespace-pre-line">{`from: wulan \nto: ${message}`}</div>
-                <div className="text-center whitespace-pre-line">
-                  {activePantun}
-                </div>
-              </div>
-            </Draggable>
-          )}
           <Image
             src="/images/eminem.jpg"
             alt="candy"
@@ -315,7 +315,7 @@ kalau dengar canda guyonmu`,
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: false, amount: 0.6, margin: "100px" }}
         transition={{ ease: "easeInOut" }}
-        className="flex flex-col h-[100vh] gap-8 w-[100vw] justify-center items-center"
+        className="flex flex-col h-[100vh] mt-32 gap-8 w-[100vw] justify-center items-center"
       >
         <motion.div
           initial={{ size: 0, rotate: 360, opacity: 0 }}
@@ -334,8 +334,9 @@ kalau dengar canda guyonmu`,
             className="object-contain"
           ></Image>
         </motion.div>
+        <div className="text-pink-300">(Xtra Late)</div>
         <motion.div className="text-6xl">Happy Valentine's Day</motion.div>
-        <div className="text-pink-300 ">Have a great rest of your week!</div>
+        <div className="text-pink-300">Have a great rest of your life!</div>
       </motion.div>
     </div>
   );
