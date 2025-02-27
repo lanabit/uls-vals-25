@@ -17,8 +17,10 @@ export default function Home() {
     color: string;
     pantun: string;
     rotation?: number;
+    name: string;
   } | null>(null);
-  const [activeName, setActiveName] = useState("");
+  const [negative, setNegative] = useState(1);
+
   useEffect(() => {
     const interBubble = document.querySelector<HTMLDivElement>(".interactive");
     const moving = document.querySelectorAll<HTMLDivElement>(".moving");
@@ -75,7 +77,7 @@ export default function Home() {
   });
 
   const containerRef = useRef<HTMLDivElement>(null);
-  const item = ["friend", "coworker", "mentor", "brother"];
+  const item = ["friend", "coworker", "mentor", "brother", "dad", "sister"];
   const good = [
     "you helped me figure out life with your warm wisdom",
     "you teach me things I otherwise wouldn't know",
@@ -87,11 +89,11 @@ export default function Home() {
   ];
 
   const handleSubmit = () => {
-    setActiveName(message);
-    setActivePantun(null);
-    if (message in pantunCollection) {
+    setNegative(negative * -1);
+    const uppercaseMessage = message.toUpperCase();
+    if (uppercaseMessage in pantunCollection) {
       setActivePantun(
-        pantunCollection[message as keyof typeof pantunCollection]
+        pantunCollection[uppercaseMessage as keyof typeof pantunCollection]
       );
     }
   };
@@ -176,9 +178,6 @@ export default function Home() {
         </motion.div>
         <div>
           <motion.div
-            // initial={{ opacity: 0 }}
-            // animate={{ opacity: 1 }}
-            // transition={{ delay: 0.3, duration: 1, ease: "easeInOut" }}
             initial={{ opacity: 0, y: 200, rotate: 20 }}
             whileInView={{ opacity: 1, y: 0, rotate: 0 }}
             viewport={{ once: false, amount: 0.5, margin: "0px" }}
@@ -256,14 +255,14 @@ export default function Home() {
           containerRef={containerRef}
           top={"3000px"}
           left={"45%"}
-          rotate={activePantun.rotation || 2}
+          rotate={(activePantun.rotation || 2) * negative}
           className={twMerge(
             "bg-gradient-to-b w-auto shadow-[0_0_20px_rgba(236,72,153,0.5)] p-8 rounded-xl",
             activePantun.color
           )}
         >
           <div className="flex flex-col gap-4">
-            <div className="whitespace-pre-line">{`from: wulan \nto: ${activeName}`}</div>
+            <div className="whitespace-pre-line">{`from: wulan \nto: ${activePantun.name}`}</div>
             <div className="text-center whitespace-pre-line">
               {activePantun.pantun}
             </div>
@@ -344,26 +343,7 @@ export default function Home() {
             />
           </motion.div>
         </div>
-
-        {/* <motion.div
-          initial={{ size: 0, rotate: 360, opacity: 0 }}
-          whileInView={{ size: 350, rotate: 0, opacity: 1 }}
-          transition={{
-            duration: 1,
-            ease: "easeInOut",
-          }}
-          viewport={{ once: false, amount: 0.6, margin: "100px" }}
-        >
-          <Image
-            src="/images/saranghae.jpg"
-            alt="candy"
-            width={350}
-            height={350}
-            className="object-contain"
-          ></Image>
-        </motion.div> */}
-
-        <div className="text-pink-300">(Xtra Late)</div>
+        <div className="text-pink-300">(Xtra Late Edition)</div>
         <motion.div className="text-6xl">Happy Valentine's Day</motion.div>
         <div className="text-pink-300">Have a great rest of your life!</div>
       </motion.div>
