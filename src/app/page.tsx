@@ -290,7 +290,7 @@ export default function Home() {
               Channeling my inner eminem 4 U
             </div>
             <div className="flex gap-2 items-center gap-5">
-              <div className="text-2xl">ENTER YOUR NAME</div>
+              <div className="text-2xl">ENTER YOUR CODE</div>
               <input
                 type="text"
                 value={message}
