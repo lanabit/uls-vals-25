@@ -177,4 +177,24 @@ export const pantunCollection = {
     pantun: `makan bebek pakai sambel cobek\n
       i love you to the moon and back`,
   },
+  V8KP4: {
+    name: `firman`,
+    rotation: 8,
+    color: `g-linear-65 from-purple-500 to-pink-500`,
+    pantun: `
+    bunga mawar sampaibunga teratai\n
+    semua tumbuh di musim semi\n
+    Hokage HR kebanggaan podifi\n
+    thank you for taking a chance on mi`,
+  },
+  Y3MX7: {
+    name: `beyya`,
+    rotation: 8,
+    color: `g-linear-65 from-purple-500 to-pink-500`,
+    pantun: `
+    beli sepatu jarang disikat\n
+    hanya dilap dengan air dan kain\n
+    ketemu kita jarang dan singkat\n
+    tapi racun shoppingmu gak main-main`,
+  },
 };
