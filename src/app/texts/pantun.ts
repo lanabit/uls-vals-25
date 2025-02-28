@@ -182,9 +182,9 @@ export const pantunCollection = {
     rotation: 12,
     color: `g-linear-65 from-red-500 to-pink-500`,
     pantun: `
-    bunga mawar sampaibunga teratai\n
+    bunga mawar sampai bunga teratai\n
     semua tumbuh di musim semi\n
-    Hokage HR kebanggaan podifi\n
+    hokage HR kebanggaan podifi\n
     thank you for taking a chance on mi`,
   },
   Y3MX7: {
