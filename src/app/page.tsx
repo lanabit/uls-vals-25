@@ -90,7 +90,7 @@ export default function Home() {
 
   const handleSubmit = () => {
     setNegative(negative * -1);
-    const uppercaseMessage = message.toUpperCase();
+    const uppercaseMessage = message.toUpperCase().trim();
     if (uppercaseMessage in pantunCollection) {
       setActivePantun(
         pantunCollection[uppercaseMessage as keyof typeof pantunCollection]
