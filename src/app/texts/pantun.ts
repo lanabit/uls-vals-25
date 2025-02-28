@@ -180,7 +180,7 @@ export const pantunCollection = {
   V8KP4: {
     name: `firman`,
     rotation: 12,
-    color: `g-linear-65 from-purple-500 to-pink-500`,
+    color: `g-linear-65 from-red-500 to-pink-500`,
     pantun: `
     bunga mawar sampaibunga teratai\n
     semua tumbuh di musim semi\n
@@ -190,7 +190,7 @@ export const pantunCollection = {
   Y3MX7: {
     name: `beyya`,
     rotation: 2,
-    color: `g-linear-65 from-purple-500 to-pink-500`,
+    color: `g-linear-65 from-indigo-500 to-violet-500`,
     pantun: `
     beli sepatu jarang disikat\n
     hanya dilap dengan air dan kain\n
